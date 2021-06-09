@@ -39,3 +39,21 @@ Society is an app that came from people's urgent need of blood bags in time of e
    <li>Request blood to the organization (PMI) supply</li>
    <li>Broadcast request to the other user</li>
 </ul>
+
+
+<h3>Api Used</h3>
+
+<table style="width:100%">
+  <thead style="text-alignment: center">
+    <td>Api Name</td>
+    <td>Link</td>
+  </thead>
+  <tr>
+    <td>Organization Blood Supply</td>
+    <td>https://blood-donor-api-3fdpgwxc5a-et.a.run.app</td>
+  </tr>
+  <tr>
+    <td>Indonesian Location</td>
+    <td>https://farizdotid.com/blog/dokumentasi-api-daerah-indonesia/</td>
+  </tr>
+</table>
