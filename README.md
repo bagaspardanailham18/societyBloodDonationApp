@@ -34,7 +34,7 @@ Society is an app that came from people's urgent need of blood bags in time of e
 </table>
       
 <h3>Features</h3>
-
+<p>Note : These are not final features, because there will be additional features next time.</p>
 <ul>
    <li>Request blood to the organization (PMI) supply</li>
    <li>Broadcast request to the other user</li>
