@@ -9,7 +9,7 @@ Society is an app that came from people's urgent need of blood bags in time of e
 <table style="width:100%">
   <thead style="text-alignment: center">
     <td>Name</td>
-    <td>Technology</td
+    <td>Technology</td>
     <td>Notes</td>
   </thead>
   <tr>
