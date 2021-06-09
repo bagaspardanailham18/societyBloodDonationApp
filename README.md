@@ -13,10 +13,13 @@ Society is an app that came from people's urgent need of blood bags in time of e
   </thead>
   <tr>
     <td>Programming Language</td>
-    <td><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kotlin/kotlin.png" width="50px"></img></td
+    <td><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kotlin/kotlin.png" width="50px"></td
   </tr>
   <tr>
     <td>Database</td>
-    <td>Firebase, MySql</td
+    <td>
+      <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png">
+      <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png">
+    </td
   </tr>
 </table>
