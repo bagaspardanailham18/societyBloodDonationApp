@@ -28,7 +28,7 @@ Society is an app that came from people's urgent need of blood bags in time of e
     <td>
       <img src="https://brandeps.com/logo-download/F/Firebase-RTDB-logo-vector-01.svg" width="70px">
       <img src="https://brandeps.com/logo-download/F/Firestore-logo-vector-01.svg" width="70px">
-    </td
+    </td>
     <td>Because the application that is built is an application that has the potential to be used by many users in the future, so it requires a centralized database in the cloud.</td>
   </tr>
 </table>
