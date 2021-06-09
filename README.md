@@ -33,7 +33,8 @@ Society is an app that came from people's urgent need of blood bags in time of e
   </tr>
   <tr>
     <td>Cloud Platform</td>
-    <td><img src="https://library.kissclipart.com/20181208/the/kissclipart-google-cloud-storage-clipart-google-cloud-platform-196ffd87fde25da8.jpg" width="70px"></td>
+    <td><img src="https://mpng.subpng.com/20181106/gjq/kisspng-google-cloud-platform-cloud-computing-g-suite-appl-5be206cd8f3455.2142196015415395335866.jpg" width="70px"></td>
+    <td>-</td>
   </tr>
 </table>
       
