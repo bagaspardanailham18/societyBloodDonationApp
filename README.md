@@ -10,10 +10,18 @@ Society is an app that came from people's urgent need of blood bags in time of e
   <thead style="text-alignment: center">
     <td>Name</td>
     <td>Technology</td
+    <td>Notes</td>
   </thead>
   <tr>
     <td>Programming Language</td>
-    <td><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kotlin/kotlin.png" width="50px"></td
+    <td><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kotlin/kotlin.png" width="50px"></td>
+    <td>
+      <ul>
+        <li>Kotlin has addressed the NullPointerException issue, reducing bugs and lowering the chance of an unexpected app crash.</li>
+        <li>Syntax is shorter and to the point compared to the previous language, namely Java.</li>
+        <li>Many technology companies have migrated to Kotlin because of the advantages it contains.</li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>Database</td>
@@ -21,6 +29,7 @@ Society is an app that came from people's urgent need of blood bags in time of e
       <img src="https://brandeps.com/logo-download/F/Firebase-RTDB-logo-vector-01.svg" width="70px">
       <img src="https://brandeps.com/logo-download/F/Firestore-logo-vector-01.svg" width="70px">
     </td
+    <td>Because the application that is built is an application that has the potential to be used by many users in the future, so it requires a centralized database in the cloud.</td>
   </tr>
 </table>
       
