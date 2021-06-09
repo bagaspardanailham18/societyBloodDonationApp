@@ -34,10 +34,6 @@ Society is an app that came from people's urgent need of blood bags in time of e
 <h3>UI Overview</h3>
       
 <table style="width:100%">
-  <thead>
-    <td>Name</td>
-    <td>Technology</td
-  </thead>
   <tr>
     <td>Page Name</td>
     <td>Image</td
