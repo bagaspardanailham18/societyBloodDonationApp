@@ -31,6 +31,10 @@ Society is an app that came from people's urgent need of blood bags in time of e
     </td>
     <td>Because the application that is built is an application that has the potential to be used by many users in the future, so it requires a centralized database in the cloud.</td>
   </tr>
+  <tr>
+    <td>Cloud Platform</td>
+    <td><img src="https://library.kissclipart.com/20181208/the/kissclipart-google-cloud-storage-clipart-google-cloud-platform-196ffd87fde25da8.jpg" width="70px"></td>
+  </tr>
 </table>
       
 <h3>Features</h3>
