@@ -41,8 +41,7 @@ Society is an app that came from people's urgent need of blood bags in time of e
   <tr>
     <td>Splash Screen</td>
     <td>
-      <img src="https://brandeps.com/logo-download/F/Firebase-RTDB-logo-vector-01.svg" width="70px">
-      <img src="https://brandeps.com/logo-download/F/Firestore-logo-vector-01.svg" width="70px">
+      <img src="https://drive.google.com/file/d/19J4Nkm7C933Jq_lR8j4p_T_Hfauyb3rx/view?usp=sharing">
     </td
   </tr>
 </table>
