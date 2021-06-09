@@ -18,8 +18,8 @@ Society is an app that came from people's urgent need of blood bags in time of e
   <tr>
     <td>Database</td>
     <td>
-      <img src="https://brandeps.com/logo-download/F/Firebase-RTDB-logo-vector-01.svg" width="50px">
-      <img src="https://brandeps.com/logo-download/F/Firestore-logo-vector-01.svg" width="50px">
+      <img src="https://brandeps.com/logo-download/F/Firebase-RTDB-logo-vector-01.svg" width="100px">
+      <img src="https://brandeps.com/logo-download/F/Firestore-logo-vector-01.svg" width="100px">
     </td
   </tr>
 </table>
