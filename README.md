@@ -9,10 +9,14 @@ Society is an app that came from people's urgent need of blood bags in time of e
 <table style="width:100%">
   <thead>
     <td>Name</td>
-    <td>Technology </td
+    <td>Technology</td
   </thead>
   <tr>
-    <td>Name</td>
-    <td>Technology </td
+    <td>Programming Language</td>
+    <td>Kotlin</td
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>Firebase, MySql</td
   </tr>
 </table>
