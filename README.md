@@ -30,18 +30,3 @@ Society is an app that came from people's urgent need of blood bags in time of e
    <li>Request blood to the organization (PMI) supply</li>
    <li>Broadcast request to the other user</li>
 </ul>
-
-<h3>UI Overview</h3>
-      
-<table style="width:100%">
-  <thead style="text-alignment: center">
-    <td>Page Name</td>
-    <td>Image</td
-  </thead>
-  <tr>
-    <td>Splash Screen</td>
-    <td>
-      <img src="https://drive.google.com/file/d/19J4Nkm7C933Jq_lR8j4p_T_Hfauyb3rx/view?usp=sharing">
-    </td
-  </tr>
-</table>
