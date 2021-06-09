@@ -7,7 +7,7 @@ Society is an app that came from people's urgent need of blood bags in time of e
 <h3>The technology used in it</h3>
 
 <table style="width:100%">
-  <thead>
+  <thead style="text-alignment: center">
     <td>Name</td>
     <td>Technology</td
   </thead>
@@ -34,10 +34,10 @@ Society is an app that came from people's urgent need of blood bags in time of e
 <h3>UI Overview</h3>
       
 <table style="width:100%">
-  <tr>
+  <thead style="text-alignment: center">
     <td>Page Name</td>
     <td>Image</td
-  </tr>
+  </thead>
   <tr>
     <td>Splash Screen</td>
     <td>
