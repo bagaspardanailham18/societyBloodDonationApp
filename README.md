@@ -6,7 +6,7 @@ Society is an app that came from people's urgent need of blood bags in time of e
 
 <h3>The technology used in it</h3>
 
-<table>
+<table style="width:100%">
   <thead>
     <td>Name</td>
     <td>Technology </td
