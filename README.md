@@ -30,3 +30,23 @@ Society is an app that came from people's urgent need of blood bags in time of e
    <li>Request blood to the organization (PMI) supply</li>
    <li>Broadcast request to the other user</li>
 </ul>
+
+<h3>UI Overview</h3>
+      
+<table style="width:100%">
+  <thead>
+    <td>Name</td>
+    <td>Technology</td
+  </thead>
+  <tr>
+    <td>Page Name</td>
+    <td>Image</td
+  </tr>
+  <tr>
+    <td>Splash Screen</td>
+    <td>
+      <img src="https://brandeps.com/logo-download/F/Firebase-RTDB-logo-vector-01.svg" width="70px">
+      <img src="https://brandeps.com/logo-download/F/Firestore-logo-vector-01.svg" width="70px">
+    </td
+  </tr>
+</table>
