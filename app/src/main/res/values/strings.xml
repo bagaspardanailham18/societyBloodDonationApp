@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name">Society</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</string>
+
+    <string name="personal">Personal</string>
+    <string name="organization">Organisasi</string>
+
+    <string name="title_register">Register</string>
+
+    <string name="hello_name">Hi Bagas,</string>
+    <string name="siap_donor_darah_sekarang">Siap donor darah sekarang?</string>
+    <string name="title_profil_pengguna">Profil Pengguna</string>
+
+    <string name="title_request_list">Daftar Request</string>
+    <string name="title_detail_request">Detail Request</string>
+    <string name="title_bloodbank">Bank Darah</string>
+    <string name="title_findDonor">Cari Donor</string>
+    <string name="title_donorToOrganization">Donor Ke Organisasi</string>
+
+    <string-array name="blood_type">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="blood_type_register">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="blood_type_filter">
+        <item>All</item>
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="user_type">
+        <item>Personal</item>
+        <item>Organisasi</item>
+    </string-array>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="firstname">Hi %1$s,</string>
+    <string name="title_activity_organization">OrganizationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home_org">Home</string>
+    <string name="menu_list_request_org">Request list</string>
+    <string name="menu_search_donor_org">Search donor</string>
+    <string name="menu_blood_stock_org">Blood stock</string>
+    <string name="menu_setting_profile_org">Profile setting</string>
+
+    <!--    RequestActivity(user)-->
+    <string name="notFound">Data request kosong</string>
+    <string name="logout">Logout</string>
+
+    <!--    RegisterActivity-->
+    <string name="hint_edt_name_org">Nama Organisasi</string>
+    <string name="hint_edt_email">Alamat Email</string>
+    <string name="hint_edt_phone">Nomor Telepon</string>
+    <string name="hint_edt_city">Kota</string>
+    <string name="hint_edt_subdistrict">Kecamatan</string>
+    <string name="hint_edt_password">Password</string>
+    <string name="hint_edt_confirm_password">Konfirmasi Password</string>
+    <string name="btn_txt_register">Register</string>
+    <string name="btn_already_have_account">Sudah punya akun?</string>
+    <string name="hint_name_personal">Nama User</string>
+    <string name="hint_edt_bloodtype">Input tipe darah</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_item_bloodneeds">Darah yang dibutuhkan :</string>
+    <string name="btn_text_detail">Detail</string>
+    <string name="label_nama_pasien">Nama Pasien :</string>
+    <string name="label_alamat">Alamat :</string>
+    <string name="hint_blood_request">Tipe darah yang dibutuhkan :</string>
+    <string name="label_requset_phone">Informasi Kontak :</string>
+    <string name="btn_txt_call">Hubungi</string>
+    <string name="btn_txt_donate_now">Bantu</string>
+    <string name="btn_txt_check_supply">Lihat Supply Organisasi</string>
+    <string name="btn_txt_request">Request Sekarang</string>
+    <string name="label_detail_bloodneed">Tipe darah yang dibutuhkan :</string>
+    <string name="hint_edt_hospital">Rumah sakit tujuan</string>
+    <string name="btn_txt_change_photoprofile">Ubah Photo Profile</string>
+    <string name="btn_txt_update">Ubah</string>
+    <string name="hint_edt_name">Nama</string>
+    <string name="splash_title">Society</string>
+    <string name="label_name_organization">Nama Organisasi</string>
+    <string name="available_unit">Unit yang tersedia</string>
+    <string name="txt_lable_note">Tambahkan catatan :</string>
+
+    <string name="notif_description"><b>%1$s </b>menerima permintaan requestmu.</string>
+    <string name="txt_warning">Mohon untuk tidak memberikan uang kepada pendonor. Dan jika pendonor meminta uang atau melakukan pelanggaran dalam komunikasi mohon segera laporkan kepada kami.</string>
+    <string name="title_contact_information">Informasi Kontak</string>
+</resources>

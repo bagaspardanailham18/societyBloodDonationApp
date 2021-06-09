@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home_org"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_request_list_org"
+            android:icon="@drawable/ic_baseline_list_24"
+            android:title="@string/menu_list_request_org" />
+        <item
+            android:id="@+id/nav_search_donor_org"
+            android:icon="@drawable/ic_baseline_person_search_24"
+            android:title="@string/menu_search_donor_org" />
+
+        <item
+            android:id="@+id/nav_blood_stock_org"
+            android:icon="@drawable/ic_baseline_bloodtype_24"
+            android:title="@string/menu_blood_stock_org"/>
+
+        <item
+            android:id="@+id/nav_profile_setting_org"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/menu_setting_profile_org"/>
+    </group>
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_logout_org"
+            android:onClick="logout"
+            android:icon="@drawable/ic_baseline_logout_24"
+            android:title="@string/logout" />
+    </group>
+</menu>

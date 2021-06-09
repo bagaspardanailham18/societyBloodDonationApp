@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_org"
+    app:startDestination="@+id/nav_home_org">
+
+    <fragment
+        android:id="@+id/nav_home_org"
+        android:name="com.capstoneproject.society.ui.organization.ui.home.OrgHomeFragment"
+        android:label="@string/menu_home_org"
+        tools:layout="@layout/org_fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_request_list_org"
+        android:name="com.capstoneproject.society.ui.organization.ui.requestlist.RequestListFragment"
+        android:label="@string/menu_list_request_org"
+        tools:layout="@layout/fragment_org_request" />
+
+    <fragment
+        android:id="@+id/nav_search_donor_org"
+        android:name="com.capstoneproject.society.ui.organization.ui.searchdonor.SearchDonorFragment"
+        android:label="@string/menu_search_donor_org"
+        tools:layout="@layout/fragment_org_finddonor" />
+
+    <fragment
+        android:id="@+id/nav_blood_stock_org"
+        android:name="com.capstoneproject.society.ui.organization.ui.bloodstock.OrgBloodstockFragment"
+        android:label="@string/menu_blood_stock_org"
+        tools:layout="@layout/fragment_org_bloodstock"/>
+
+    <fragment
+        android:id="@+id/nav_profile_setting_org"
+        android:name="com.capstoneproject.society.ui.organization.ui.profile.OrgProfileFragment"
+        android:label="@string/menu_setting_profile_org"
+        tools:layout="@layout/fragment_org_profile"/>
+</navigation>
