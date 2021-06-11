@@ -9,13 +9,13 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.capstoneproject.society.R
 import com.capstoneproject.society.databinding.ActivityUpdateProfileBinding
-import com.capstoneproject.society.databinding.FragmentProfileBinding
 import com.capstoneproject.society.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -49,6 +49,12 @@ class UpdateProfileActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         _binding = ActivityUpdateProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.custom_toolbar_2)
+        val toolbarTitle: TextView = toolbar.findViewById(R.id.custom_toolbar_2_title)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        toolbarTitle.setText(getString(R.string.title_update_profile))
 
         auth = FirebaseAuth.getInstance()
 

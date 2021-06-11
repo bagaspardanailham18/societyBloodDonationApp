@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.capstoneproject.society.R
@@ -42,7 +43,15 @@ class RequestListActivity : AppCompatActivity() {
         binding = ActivityRequestListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setActionBarTitle(getString(R.string.title_request_list))
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.custom_toolbar_2)
+        val toolbarTitle: TextView = toolbar.findViewById(R.id.custom_toolbar_2_title)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        toolbarTitle.setText(getString(R.string.title_request_list))
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
 
         auth = FirebaseAuth.getInstance()
         val user = auth.currentUser

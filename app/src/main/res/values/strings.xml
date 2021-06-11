@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">Society</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_notifications">Notifikasi</string>
+    <string name="title_profile">Profil</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -18,7 +17,7 @@
     <string name="siap_donor_darah_sekarang">Siap donor darah sekarang?</string>
     <string name="title_profil_pengguna">Profil Pengguna</string>
 
-    <string name="title_request_list">Daftar Request</string>
+    <string name="title_request_list">Daftar Request Masuk</string>
     <string name="title_detail_request">Detail Request</string>
     <string name="title_bloodbank">Bank Darah</string>
     <string name="title_findDonor">Cari Donor</string>
@@ -49,6 +48,11 @@
     <string-array name="user_type">
         <item>Personal</item>
         <item>Organisasi</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Pria</item>
+        <item>Wanita</item>
     </string-array>
 
     <string name="title_activity_login">LoginActivity</string>
@@ -119,4 +123,15 @@
     <string name="notif_description"><b>%1$s </b>menerima permintaan requestmu.</string>
     <string name="txt_warning">Mohon untuk tidak memberikan uang kepada pendonor. Dan jika pendonor meminta uang atau melakukan pelanggaran dalam komunikasi mohon segera laporkan kepada kami.</string>
     <string name="title_contact_information">Informasi Kontak</string>
+    <string name="title_update_profile">Update Profile</string>
+    <string name="title_detail_notif">Detail Notification</string>
+    <string name="title_form_request_accept">Catatan</string>
+    <string name="title_detail_supply">Detail Supply</string>
+    <string name="hint_edt_gender">Jenis Kelamin</string>
+
+    <string name="label_dateofbirth">Tanggal Lahir :</string>
+    <string name="label_gender">Jenis Kelamin :</string>
+    <string name="title_donor_success">Telah mendonor sebanyak :</string>
+    <string name="menu_text_listrequest">Periksa secara berkala request masuk, dan salurkan bantuan anda</string>
+    <string name="menu_text_finddonor">Dapatkan supply darah dari PMI, atau broadcast request ke user lain</string>
 </resources>

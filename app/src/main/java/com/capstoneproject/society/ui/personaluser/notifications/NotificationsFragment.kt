@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener
 class NotificationsFragment : Fragment() {
 
     private var _binding: FragmentNotificationsBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     private lateinit var auth: FirebaseAuth
     private lateinit var requestAcceptedList: MutableList<RequestAcceptedItem>
@@ -29,7 +29,7 @@ class NotificationsFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentNotificationsBinding.inflate(layoutInflater, container, false)
-        val view = binding.root
+        val view = binding?.root
         return view
     }
 
@@ -60,9 +60,9 @@ class NotificationsFragment : Fragment() {
                             moveToDetailNotifActivity(data)
                         }
                     })
-                    binding.rvNotification.adapter = adapter
-                    binding.rvNotification.layoutManager = LinearLayoutManager(requireContext())
-                    binding.rvNotification.setHasFixedSize(true)
+                    binding?.rvNotification?.adapter = adapter
+                    binding?.rvNotification?.layoutManager = LinearLayoutManager(requireContext())
+                    binding?.rvNotification?.setHasFixedSize(true)
                     adapter.notifyDataSetChanged()
                 }
             }

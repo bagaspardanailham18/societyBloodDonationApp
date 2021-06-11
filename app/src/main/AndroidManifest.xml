@@ -14,26 +14,41 @@
         android:theme="@style/Theme.Society"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.personaluser.notifications.NotificationDetailActivity" />
+        <activity android:name=".ui.personaluser.home.requestlist.FormRequestAcceptActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
+            android:label="@string/title_form_request_accept"
+            android:parentActivityName=".ui.personaluser.home.requestlist.DetailRequestActivity"/>
+        <activity android:name=".ui.personaluser.notifications.NotificationDetailActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
+            android:label="@string/title_detail_notif"/>
         <activity
             android:name=".ui.personaluser.home.finddonor.DetailSupplyActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
+            android:label="@string/title_detail_supply"
             android:parentActivityName=".ui.personaluser.home.finddonor.FindDonorActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/Theme.Society.NoActionBar" />
-        <activity android:name=".ui.personaluser.profile.UpdateProfileActivity" />
+        <activity android:name=".ui.personaluser.profile.UpdateProfileActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
+            android:label="@string/title_update_profile"/>
         <activity
             android:name=".ui.personaluser.home.requestlist.DetailRequestActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
             android:label="@string/title_detail_request"
             android:parentActivityName=".ui.personaluser.home.requestlist.RequestListActivity" />
         <activity
             android:name=".ui.personaluser.home.requestlist.RequestListActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
+            android:label="@string/title_request_list"
             android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".ui.personaluser.home.organizationdonor.DonorToOrganizationActivity"
             android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".ui.personaluser.home.finddonor.FindDonorActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
+            android:label="@string/title_findDonor"
             android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".ui.personaluser.home.bloodbank.BloodBankActivity"
@@ -48,6 +63,7 @@
             android:theme="@style/Theme.Society.NoActionBar" />
         <activity
             android:name=".ui.auth.register.RegisterActivity"
+            android:theme="@style/Theme.Society.NoActionBar"
             android:label="@string/title_register" />
         <activity
             android:name=".ui.auth.login.LoginActivity"

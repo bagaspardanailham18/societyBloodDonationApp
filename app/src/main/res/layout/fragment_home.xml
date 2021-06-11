@@ -160,7 +160,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/lorem"/>
+                            android:text="@string/menu_text_listrequest"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -206,7 +206,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/lorem"/>
+                            android:text="@string/menu_text_finddonor"/>
                     </LinearLayout>
 
                 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.capstoneproject.society.ui.auth.register.personal
 
+import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
@@ -29,6 +31,9 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import org.json.JSONException
 import org.json.JSONObject
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PersonalRegisterFragment : Fragment(), View.OnClickListener {
 
@@ -39,6 +44,9 @@ class PersonalRegisterFragment : Fragment(), View.OnClickListener {
     private val namaSubdistrict: MutableList<String> = ArrayList()
 
     private val listSubdistrict = MutableLiveData<ArrayList<SubdistrictItems>>()
+
+    @SuppressLint("WeekBasedYear")
+    private var formatDate = SimpleDateFormat("dd-MMM-YYYY", Locale.US)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +63,10 @@ class PersonalRegisterFragment : Fragment(), View.OnClickListener {
         val bloodTypes = resources.getStringArray(R.array.blood_type_register)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_bloodtype_item, bloodTypes)
         binding.edtRegisterBloodtype.setAdapter(arrayAdapter)
+
+        val gender = resources.getStringArray(R.array.gender)
+        val arrayGenderAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_bloodtype_item, gender)
+        binding.edtRegisterGender.setAdapter(arrayGenderAdapter)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -67,6 +79,10 @@ class PersonalRegisterFragment : Fragment(), View.OnClickListener {
         binding.btnPersonalRegister.setOnClickListener(this)
 
         loadDataSubdistrict()
+
+        binding.edtRegisterDate.setOnClickListener {
+            setDatePicker()
+        }
     }
 
     override fun onClick(v: View?) {
@@ -79,6 +95,8 @@ class PersonalRegisterFragment : Fragment(), View.OnClickListener {
                 val bloodtype = binding.edtRegisterBloodtype.text.toString()
                 val email = binding.edtRegisterEmailPersonal.text.toString().trim()
                 val phone = binding.edtRegisterPhone.text.toString().trim()
+                val date = binding.edtRegisterDate.text.toString()
+                val gender = binding.edtRegisterGender.text.toString()
                 val city = binding.edtRegisterCity.text.toString()
                 val subdistrict = binding.edtRegisterSubdistrict.text.toString()
                 val password = binding.edtRegisterPassword.text.toString().trim()
@@ -109,6 +127,19 @@ class PersonalRegisterFragment : Fragment(), View.OnClickListener {
                     binding.edtRegisterPhone.requestFocus()
                     return
                 }
+
+                if (date.isEmpty()) {
+                    binding.edtRegisterDate.error = "Tanggal lahir harus diisi"
+                    binding.edtRegisterDate.requestFocus()
+                    return
+                }
+
+                if (gender.isEmpty()) {
+                    binding.edtRegisterGender.error = "Jenis kelamin harus diisi"
+                    binding.edtRegisterGender.requestFocus()
+                    return
+                }
+
                 if (city.isEmpty()) {
                     binding.edtRegisterCity.error = "Kota harus dipilih"
                     binding.edtRegisterCity.requestFocus()
@@ -201,11 +232,14 @@ class PersonalRegisterFragment : Fragment(), View.OnClickListener {
         val email = binding.edtRegisterEmailPersonal.text.toString().trim()
         val bloodtype = binding.edtRegisterBloodtype.text.toString()
         val phonenumber = binding.edtRegisterPhone.text.toString().trim()
+        val date = binding.edtRegisterDate.text.toString()
+        val gender = binding.edtRegisterGender.text.toString()
         val city = binding.edtRegisterCity.text.toString()
         val subdistrict = binding.edtRegisterSubdistrict.text.toString()
         val usertype = "Personal"
+        val donorsucces = 0
 
-        val user = PersonalUser(uid, name, email, phonenumber, city, subdistrict, bloodtype, usertype, profileImageUrl)
+        val user = PersonalUser(uid, name, email, phonenumber, city, subdistrict, bloodtype, date, gender, usertype, profileImageUrl, donorsucces)
         ref.child(uid).setValue(user)
             .addOnSuccessListener {
                 Log.d("RegisterActivity", name)
@@ -256,6 +290,21 @@ class PersonalRegisterFragment : Fragment(), View.OnClickListener {
                     Toast.makeText(requireContext(), "Tidak ada jaringan internet", Toast.LENGTH_SHORT).show()
                 }
             })
+    }
+
+    private fun setDatePicker() {
+        val getDate = Calendar.getInstance()
+        val datePicker = DatePickerDialog(requireContext(), android.R.style.Theme_Holo_Light_Dialog_MinWidth, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+
+            val selectDate = Calendar.getInstance()
+            selectDate.set(Calendar.YEAR, year)
+            selectDate.set(Calendar.MONTH, month)
+            selectDate.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            val date = formatDate.format(selectDate.time)
+            binding.edtRegisterDate.setText(date)
+
+        }, getDate.get(Calendar.YEAR), getDate.get(Calendar.MONTH), getDate.get(Calendar.DAY_OF_MONTH))
+        datePicker.show()
     }
 
 

@@ -1,31 +1,20 @@
 package com.capstoneproject.society.ui.personaluser.home.finddonor
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
+import com.capstoneproject.society.R
 import com.capstoneproject.society.data.source.remote.response.BloodSupplyResponse
-import com.capstoneproject.society.data.source.remote.response.BloodSupplyResponseItem
 import com.capstoneproject.society.data.source.remote.response.SupplyRequest
 import com.capstoneproject.society.databinding.ActivityDetailSupplyBinding
-import com.capstoneproject.society.databinding.ActivityFindDonorBinding
 import com.capstoneproject.society.model.OrganizationSupplyItem
 import com.capstoneproject.society.network.ApiConfig
 import com.capstoneproject.society.network.ApiService
 import com.capstoneproject.society.ui.MainActivity
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonParser
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import okhttp3.Callback
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
 
@@ -42,6 +31,15 @@ class DetailSupplyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityDetailSupplyBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.custom_toolbar_2)
+        val toolbarTitle: TextView = toolbar.findViewById(R.id.custom_toolbar_2_title)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        toolbarTitle.setText(getString(R.string.title_detail_supply))
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val data = intent.getParcelableExtra(EXTRA_DETAIL) as OrganizationSupplyItem?
 

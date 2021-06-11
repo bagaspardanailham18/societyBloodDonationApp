@@ -5,8 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -36,10 +36,6 @@ class FindDonorActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var auth: FirebaseAuth
 
-    private fun setActionBarTitle(title: String) {
-        supportActionBar?.title = title
-    }
-
     companion object {
         var databaseReference: DatabaseReference? = null
         var database: FirebaseDatabase? = null
@@ -57,7 +53,14 @@ class FindDonorActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityFindDonorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setActionBarTitle(getString(R.string.title_findDonor))
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.custom_toolbar_2)
+        val toolbarTitle: TextView = toolbar.findViewById(R.id.custom_toolbar_2_title)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        toolbarTitle.setText(getString(R.string.title_findDonor))
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         binding.rvSupply.setHasFixedSize(true)
         findDonorViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FindDonorViewModel::class.java)

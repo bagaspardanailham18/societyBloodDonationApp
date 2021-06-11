@@ -27,7 +27,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var homeViewModel: HomeViewModel
 
     private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding !!
+    private val binding get() = _binding
 
     private lateinit var auth: FirebaseAuth
     companion object {
@@ -43,15 +43,15 @@ class HomeFragment : Fragment(), View.OnClickListener {
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-        val view = binding.root
+        val view = binding?.root
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.listrequest.setOnClickListener(this)
-        binding.caridonor.setOnClickListener(this)
+        binding?.listrequest?.setOnClickListener(this)
+        binding?.caridonor?.setOnClickListener(this)
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
@@ -87,23 +87,18 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 val split = name.split(delim)
                 val getFirstName = split[0]
 
-                binding.title.text = resources.getString(R.string.firstname, getFirstName)
+                binding?.title?.text = resources.getString(R.string.firstname, getFirstName)
 
                 Glide.with(requireContext())
                     .load(snapshot.child("profileimageurl").value.toString())
                     .apply(RequestOptions().override(50,50))
                     .centerCrop()
-                    .into(binding.imgProfile)
+                    .into(binding?.imgProfile!!)
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
         })
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

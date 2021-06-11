@@ -1,252 +1,376 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#F6F6F6"
     tools:context=".ui.personaluser.notifications.NotificationDetailActivity">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
-        android:layout_width="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:scrollbars="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:padding="@dimen/dimen_16"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_baseline_error_outline_24" />
+            <include layout="@layout/custom_toolbar2"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_16"
-                android:fontFamily="@font/roboto_light"
-                android:lineSpacingExtra="2dp"
-                android:text="@string/txt_warning" />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/dimen_16">
-
-            <TextView
-                android:id="@+id/title_Identity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/roboto_light"
-                android:text="Identitas Relawan"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <View
-                android:id="@+id/divider1"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/title_Identity"
-                android:layout_marginVertical="@dimen/dimen_16"
-                android:background="@color/browser_actions_divider_color"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_Identity" />
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/tv_userImg"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:src="@android:color/darker_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/divider1"
-                app:layout_constraintTop_toBottomOf="@+id/divider1" />
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/divider1"
-                android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/tv_userImg"
-                android:textSize="@dimen/dimen_16"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_userImg"
-                app:layout_constraintTop_toTopOf="@+id/tv_userImg"
-                android:text="Bagas Pardana Ilham" />
-
-            <TextView
-                android:id="@+id/tv_userType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_userImg"
-                app:layout_constraintStart_toEndOf="@+id/tv_userImg"
-                tools:text="Personal" />
-
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginVertical="@dimen/dimen_16"
-                android:layout_marginTop="16dp"
-                android:background="@color/browser_actions_divider_color"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_userImg" />
-
-            <ImageView
-                android:id="@+id/image_loc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_baseline_location_on_24"
-                app:layout_constraintStart_toStartOf="@+id/divider2"
-                app:layout_constraintTop_toBottomOf="@+id/divider2" />
-
-            <TextView
-                android:id="@+id/tv_userLoc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/image_loc"
-                app:layout_constraintStart_toEndOf="@+id/image_loc"
-                app:layout_constraintTop_toTopOf="@+id/image_loc"
-                tools:text="Location" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/dimen_16">
-
-            <TextView
-                android:id="@+id/title_contact"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@string/title_contact_information"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_below="@+id/custom_toolbar_2">
 
-            <ImageView
-                android:id="@+id/image_phone"
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/dimen_16"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_error_outline_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_16"
+                        android:fontFamily="@font/roboto_light"
+                        android:lineSpacingExtra="2dp"
+                        android:text="@string/txt_warning" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_phone"
-                app:layout_constraintStart_toStartOf="@+id/title_contact"
-                app:layout_constraintTop_toBottomOf="@+id/title_contact" />
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/materialCardView">
 
-            <TextView
-                android:id="@+id/tv_contact"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/image_phone"
-                app:layout_constraintStart_toEndOf="@+id/image_phone"
-                app:layout_constraintTop_toTopOf="@+id/image_phone"
-                tools:text="0896881329492" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dimen_16">
 
-            <FrameLayout
-                android:id="@+id/btn_call"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/btn_call"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_contact"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_contact"
-                app:layout_constraintTop_toTopOf="@+id/tv_contact"
-                app:layout_constraintVertical_bias="0.684">
+                    <TextView
+                        android:id="@+id/title_Identity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="Identitas Relawan"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/title_Identity"
+                        android:layout_marginVertical="@dimen/dimen_16"
+                        android:background="@color/browser_actions_divider_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_Identity" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/tv_userImg"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@android:color/darker_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/divider1"
+                        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider1"
+                        android:layout_marginStart="16dp"
+                        android:layout_toEndOf="@+id/tv_userImg"
+                        android:text="Bagas Pardana Ilham"
+                        android:textSize="@dimen/dimen_16"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/tv_userImg"
+                        app:layout_constraintTop_toTopOf="@+id/tv_userImg" />
+
+                    <TextView
+                        android:id="@+id/tv_userType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_userImg"
+                        app:layout_constraintStart_toEndOf="@+id/tv_userImg"
+                        tools:text="Personal" />
+
+                    <ImageView
+                        android:id="@+id/image_loc"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_baseline_location_on_24"
+                        app:layout_constraintStart_toStartOf="@+id/tv_userType"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_userType" />
+
+                    <TextView
+                        android:id="@+id/tv_userLoc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_loc"
+                        app:layout_constraintStart_toEndOf="@+id/image_loc"
+                        app:layout_constraintTop_toTopOf="@+id/image_loc"
+                        tools:text="Location" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="@dimen/dimen_16"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/browser_actions_divider_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/image_loc" />
+
+
+                    <TextView
+                        android:id="@+id/title_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/label_dateofbirth"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/divider2"
+                        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+                    <TextView
+                        android:id="@+id/tv_userDateOfbirt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/title_date"
+                        app:layout_constraintStart_toEndOf="@+id/title_date"
+                        app:layout_constraintTop_toTopOf="@+id/title_date"
+                        tools:text="Date of birth" />
+
+                    <TextView
+                        android:id="@+id/title_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/label_gender"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/title_date"
+                        app:layout_constraintTop_toBottomOf="@+id/title_date" />
+
+                    <TextView
+                        android:id="@+id/tv_userGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/title_gender"
+                        app:layout_constraintStart_toEndOf="@+id/title_gender"
+                        app:layout_constraintTop_toTopOf="@+id/title_gender"
+                        tools:text="Gender" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/materialCardView2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dimen_16">
+
+                    <TextView
+                        android:id="@+id/title_Note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Catatan"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="@+id/title_Note"
+                        app:layout_constraintTop_toBottomOf="@+id/title_Note"
+                        tools:text="Notes" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/materialCardView3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dimen_16">
+
+                    <TextView
+                        android:id="@+id/title_donorSuccess"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_donor_success"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_donorSuccess"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/title_donorSuccess"
+                        app:layout_constraintStart_toEndOf="@+id/title_donorSuccess"
+                        app:layout_constraintTop_toTopOf="@+id/title_donorSuccess"
+                        tools:text="jumlah" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/materialCardView4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dimen_16">
+
+                    <TextView
+                        android:id="@+id/title_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/title_contact_information"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/image_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_phone"
+                        app:layout_constraintStart_toStartOf="@+id/title_contact"
+                        app:layout_constraintTop_toBottomOf="@+id/title_contact" />
+
+                    <TextView
+                        android:id="@+id/tv_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_phone"
+                        app:layout_constraintStart_toEndOf="@+id/image_phone"
+                        app:layout_constraintTop_toTopOf="@+id/image_phone"
+                        tools:text="0896881329492" />
+
+                    <FrameLayout
+                        android:id="@+id/btn_call"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_call"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_contact"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/tv_contact"
+                        app:layout_constraintTop_toTopOf="@+id/tv_contact"
+                        app:layout_constraintVertical_bias="0.684">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_phone_white"/>
+
+                    </FrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/layout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_below="@+id/materialCardView5">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_reject"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_phone_white"/>
+                    android:layout_marginEnd="@dimen/dimen_16"
+                    android:text="Tolak"
+                    android:textColor="@color/light_red"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="100dp"
+                    app:strokeColor="@color/light_red"
+                    app:strokeWidth="2dp" />
 
-            </FrameLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_finish"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_16"
+                    android:text="Selesai"
+                    app:cornerRadius="100dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView3">
+    </ScrollView>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_reject"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dimen_16"
-            android:text="Tolak"
-            android:textColor="@color/light_red"
-            app:backgroundTint="@color/white"
-            app:cornerRadius="100dp"
-            app:strokeColor="@color/light_red"
-            app:strokeWidth="2dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_finish"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_16"
-            android:text="Selesai"
-            app:cornerRadius="100dp" />
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
