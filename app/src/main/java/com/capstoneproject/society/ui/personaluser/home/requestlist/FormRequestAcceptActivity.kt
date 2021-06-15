@@ -6,17 +6,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.capstoneproject.society.R
+import com.capstoneproject.society.RetrofitInstance
 import com.capstoneproject.society.databinding.ActivityFormRequestAcceptBinding
+import com.capstoneproject.society.model.NotificationData
+import com.capstoneproject.society.model.PushNotification
 import com.capstoneproject.society.model.RequestAcceptedItem
 import com.capstoneproject.society.ui.MainActivity
+import com.capstoneproject.society.ui.personaluser.notifications.NotificationsFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -24,6 +30,8 @@ class FormRequestAcceptActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityFormRequestAcceptBinding
 
     private lateinit var auth: FirebaseAuth
+
+    var topic = ""
 
     companion object {
         const val EXTRA_UID_REQUEST = "extra_uid_request"
@@ -55,37 +63,57 @@ class FormRequestAcceptActivity : AppCompatActivity(), View.OnClickListener {
             val note = binding.edtNote.text.toString().trim()
             val idRequest = randomID()
 
-            Log.d("cek", idUserReq)
+            if (note.isEmpty()) {
+                Toast.makeText(this, "Catatan harus diisi", Toast.LENGTH_SHORT).show()
+            } else {
+                val userRef = FirebaseDatabase.getInstance().reference.child("personal_user").child(uid)
+                userRef.addValueEventListener(object : ValueEventListener {
+                    @RequiresApi(Build.VERSION_CODES.O)
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val donorName = snapshot.child("name").value.toString()
+                        val donorImgUrl = snapshot.child("profileimageurl").value.toString()
 
-            val userRef = FirebaseDatabase.getInstance().reference.child("personal_user").child(uid)
-            userRef.addValueEventListener(object : ValueEventListener {
-                @RequiresApi(Build.VERSION_CODES.O)
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val donorName = snapshot.child("name").value.toString()
-                    val donorImgUrl = snapshot.child("profileimageurl").value.toString()
+                        val current = LocalDateTime.now()
+                        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+                        val datetime = current.format(formatter)
 
-                    val current = LocalDateTime.now()
-                    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
-                    val datetime = current.format(formatter)
+                        val dbRequestAcc = FirebaseDatabase.getInstance().getReference("request_accepted")
+                        val reqAcc = RequestAcceptedItem(idRequest,
+                            uid, idUserReq, donorName, donorImgUrl, datetime, note)
 
-                    val dbRequestAcc = FirebaseDatabase.getInstance().getReference("request_accepted")
-                    val reqAcc = RequestAcceptedItem(idRequest,
-                        uid, idUserReq, donorName, donorImgUrl, datetime, note)
+                        dbRequestAcc.child(idRequest).setValue(reqAcc)
 
-                    dbRequestAcc.child(idRequest).setValue(reqAcc)
+                        topic = "/topics/$idUserReq"
+                        PushNotification(NotificationData("$donorName accepted your request"), topic).also {
+                            sendNotification(it)
+                        }
 
-                    startActivity(Intent(this@FormRequestAcceptActivity, MainActivity::class.java))
-                    Toast.makeText(this@FormRequestAcceptActivity, "Anda menerima request", Toast.LENGTH_SHORT).show()
-                    finish()
-                }
+                        startActivity(Intent(this@FormRequestAcceptActivity, MainActivity::class.java))
+                        Toast.makeText(this@FormRequestAcceptActivity, "Anda menerima request", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
 
-            })
+                })
+            }
         }
 
+    }
+
+    private fun sendNotification(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
+        try {
+            val response = RetrofitInstance.api.postNotification(notification)
+            if (response.isSuccessful) {
+                return@launch
+            } else {
+                Log.e("TAG", response.errorBody()!!.string())
+            }
+        } catch (e: Exception) {
+            Log.e("TAG", e.toString())
+        }
     }
 
     private fun randomID(): String = List(16) {

@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nama"
+            app:boxBackgroundColor="@color/white"
             app:startIconDrawable="@drawable/ic_baseline_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -46,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Email"
+            app:boxBackgroundColor="@color/white"
             app:startIconDrawable="@drawable/ic_baseline_email_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -53,7 +55,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:editable="false"
-                android:background="#E6E6E6"
                 tools:text="email"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -64,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="No Telepon"
+            app:boxBackgroundColor="@color/white"
             app:startIconDrawable="@drawable/ic_baseline_phone_enabled_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -71,7 +73,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:editable="false"
-                android:background="#E6E6E6"
                 tools:text="no telp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -82,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Golongan Darah"
+            app:boxBackgroundColor="@color/white"
             app:startIconDrawable="@drawable/ic_baseline_bloodtype_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -89,7 +91,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:editable="false"
-                android:background="#E6E6E6"
                 tools:text="gol darah"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -103,10 +104,11 @@
         android:padding="16dp"
         android:layout_below="@+id/layout_information">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_change_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:cornerRadius="50dp"
             android:text="Ubah data profile"/>
 
     </LinearLayout>

@@ -20,6 +20,10 @@
             android:layout_margin="16dp"
             android:layout_below="@+id/custom_toolbar_2"
             android:hint="@string/hint_edt_bloodtype"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
             app:startIconDrawable="@drawable/ic_baseline_bloodtype_24">
 
             <AutoCompleteTextView
@@ -32,39 +36,42 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@+id/textInputLayout"
+            app:cornerRadius="100dp"
+            android:text="@string/btn_txt_check_supply" />
+
+        <TextView
+            android:id="@+id/text_Or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_request"
+            android:layout_centerHorizontal="true"
+            android:text="Atau" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:id="@+id/btn_broadcast_to_other_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_below="@+id/textInputLayout"
-            android:text="Broadcast Request ke user lain" />
-
-        <TextView
-            android:id="@+id/text_Or"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_broadcast_to_other_user"
-            android:layout_centerHorizontal="true"
-            android:text="Atau" />
-
-        <Button
-            android:id="@+id/btn_request"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_below="@+id/text_Or"
-            android:text="@string/btn_txt_check_supply" />
+            app:cornerRadius="100dp"
+            android:text="Broadcast Request ke user lain" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_supply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_below="@+id/btn_request"/>
+            android:layout_below="@+id/btn_broadcast_to_other_user"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
