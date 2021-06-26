@@ -69,12 +69,8 @@ Society is an app that came from people's urgent need of blood bags in time of e
   <tr>
     <td><img src="https://github.com/bagaspardanailham18/societyBloodDonationApp/blob/main/ImageLibrary/iPhone%2012,%2012%20Pro%20%E2%80%93%201.png?raw=true" width="200"></td>
     <td><img src="https://github.com/bagaspardanailham18/societyBloodDonationApp/blob/main/ImageLibrary/iPhone%2012,%2012%20Pro%20%E2%80%93%202.png?raw=true" width="200"></td>
-  </tr>
-  <tr>
     <td><img src="https://github.com/bagaspardanailham18/societyBloodDonationApp/blob/main/ImageLibrary/Request%20List%20Page.png?raw=true" width="200"></td>
     <td><img src="https://github.com/bagaspardanailham18/societyBloodDonationApp/blob/main/ImageLibrary/iPhone%2012,%2012%20Pro%20%E2%80%93%204.png?raw=true" width="200"></td>
-  </tr>
-  <tr>
     <td><img src="https://github.com/bagaspardanailham18/societyBloodDonationApp/blob/main/ImageLibrary/iPhone%2012,%2012%20Pro%20%E2%80%93%205.png?raw=true" width="200"></td>
   </tr>
 </table>
